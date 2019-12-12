@@ -12,10 +12,19 @@
         <title>JSP Page</title>
     </head>
     <body>
-
+<%
+            String lloc = request.getServletContext().getContextPath();
+            int num = lloc.length() - lloc.replaceAll("/", "").length();
+            lloc = "";
+            for (int i = 0; i < num - 1; i++) {
+                lloc = lloc + "/..";
+            }
+            lloc = lloc + "/capcalera.jsp";
+        %>
+        <jsp:include page="<%= lloc%>"/>   
         <h1>Part privada</h1>
 
-        <%= session.getAttribute("acces")%>
+        //<%= session.getAttribute("acces")%>
 
     </body>
 </html>

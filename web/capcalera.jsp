@@ -82,12 +82,12 @@
                 <%
                     //si l'usuari esta dins la sessio
                     if ((Boolean) session.getAttribute("acces") != null) {
-                        if ((Boolean) session.getAttribute("acces") == false) {%>
-                <a href="<%= request.getContextPath()%>/acces/tanca.jsp">Tanca sessió</a>
-                <% } else {%>
+                        if ((Boolean) session.getAttribute("acces") == true) {%>
                 <a href="<%= request.getContextPath()%>/usuari.jsp"><%= session.getAttribute("user")%></a>
+                <a href="<%= request.getContextPath()%>/acces/tanca.jsp">Tanca sessió</a>
                 <% }
-                    }%>
+                    }
+                %>
             </div>
 
 
