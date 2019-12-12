@@ -1,0 +1,18 @@
+Executar a un browser:
+
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=todosporedad&par=80
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=cantidadporedad&par=80
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=cantidadporfranja&par=0-9
+
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=pelisporcadena&par=bridge
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=cantipelisporcadena&par=city
+
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=pelisdepersona&par=Fred Astaire
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=personasdepeli&par=The Longest Day
+
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=pelisderating&par=9.0-10.0
+
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=gpspoblacion&par=Estellencs
+
+http://localhost:8080/PeliculesWeb/bdpeliculas?op=getuseraccess&par=mascport-patata
+
