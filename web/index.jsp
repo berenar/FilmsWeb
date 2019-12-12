@@ -10,6 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Portal de películas</title>
+
+        <script src="publica/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="publica/highcharts.js"></script>
+        <script src="publica/exporting.js"></script>
+        <script src="publica/export-data.js"></script>
+        <script src="publica/primera.js" type="text/javascript"></script>
     </head>
     <body>
         <%
@@ -40,5 +46,8 @@
             <input type="submit" value="Submit">
         </form>
         <%}%>
+
+        <div id="espera"></div>
+        <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
     </body>
 </html>
