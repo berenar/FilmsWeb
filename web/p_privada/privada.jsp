@@ -19,7 +19,7 @@
             for (int i = 0; i < num - 1; i++) {
                 lloc = lloc + "/..";
             }
-            lloc = lloc + "/capcalera.jsp";
+            lloc = lloc + "../p_comuna/capcalera.jsp";
         %>
         <jsp:include page="<%= lloc%>"/>   
         <h1>Part privada</h1>

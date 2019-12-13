@@ -11,11 +11,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Portal de películas</title>
 
-        <script src="publica/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="publica/highcharts.js"></script>
-        <script src="publica/exporting.js"></script>
-        <script src="publica/export-data.js"></script>
-        <script src="publica/primera.js" type="text/javascript"></script>
+        <script src="p_publica/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="p_publica/highcharts.js"></script>
+        <script src="p_publica/exporting.js"></script>
+        <script src="p_publica/export-data.js"></script>
+        <script src="p_publica/primera.js" type="text/javascript"></script>
     </head>
     <body>
         <%
@@ -25,12 +25,13 @@
             for (int i = 0; i < num - 1; i++) {
                 lloc = lloc + "/..";
             }
-            lloc = lloc + "/capcalera.jsp";
+            lloc = lloc + "p_comuna/capcalera.jsp";
         %>
         <jsp:include page="<%= lloc%>"/>   
         <div><h1> Part pública</h1> </div>
         <H1>
-            &nbsp;&nbsp;&nbsp;&nbsp;<a href="graficocanvas/grafico.jsp">Ejemplo de gràfico en canvas de JavaScript </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="graficocanvas/grafico.jsp">
+                Ejemplo de gràfico en canvas de JavaScript </a>
             <br>
         </H1>
 
@@ -48,6 +49,8 @@
         <%}%>
 
         <div id="espera"></div>
-        <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+        <div id="container" style="min-width: 310px; height: 400px; max-width: 
+             600px; margin: 0 auto">
+        </div>
     </body>
 </html>

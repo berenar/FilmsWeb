@@ -5,9 +5,9 @@
  */
 package perbd;
 
+import crypto.CryptoUtil;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.Calendar;
 
 /**
  *
@@ -15,22 +15,23 @@ import java.util.Calendar;
  */
 public class DBActionsUsers {
 
+    
+    String key = "adiiu";
+
     public String getUserAccess(String par) {
         DBConnection con = new DBConnection();
-        String res = "{'getuseraccess':";
-        String user = par.substring(0, par.indexOf("-"));
-        String passwd = par.substring(par.indexOf("-") + 1);
+        String res = "{'password':'";
         try {
             con.open();
             Statement st = con.getConection().createStatement();
-            String sql = "select * from usuarios where ((user='" + user + "')and(passwd='" + passwd + "'));";
+            String sql = "select password from users where (user='" + par + "')";
             ResultSet rs = st.executeQuery(sql);
-            String aux;
-            int nivel = -1;
-            if (rs.next()) {
-                nivel = rs.getInt("nivel");  
+            while (rs.next()) {
+                CryptoUtil cryptoUtil = new CryptoUtil();
+                String enc_pass = rs.getString("password");
+                res = res + cryptoUtil.decrypt(key, enc_pass);
+                res = res + "'}";
             }
-            res = res + "{'nivel':" + nivel + "}}";
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
