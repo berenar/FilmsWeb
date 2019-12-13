@@ -24,7 +24,7 @@
         <jsp:include page="<%= lloc%>"/>   
         <h1>Part privada</h1>
 
-        //<%= session.getAttribute("acces")%>
+        <%= session.getAttribute("acces")%>
 
     </body>
 </html>

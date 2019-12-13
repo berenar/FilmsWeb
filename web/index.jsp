@@ -27,7 +27,7 @@
             }
             lloc = lloc + "p_comuna/capcalera.jsp";
         %>
-        <jsp:include page="<%= lloc%>"/>   
+        <jsp:include page="<%= lloc%>"/>
         <div><h1> Part pública</h1> </div>
         <H1>
             &nbsp;&nbsp;&nbsp;&nbsp;<a href="graficocanvas/grafico.jsp">
@@ -47,6 +47,8 @@
             <input type="submit" value="Submit">
         </form>
         <%}%>
+        
+        
 
         <div id="espera"></div>
         <div id="container" style="min-width: 310px; height: 400px; max-width: 

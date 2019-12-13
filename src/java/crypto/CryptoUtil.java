@@ -2,7 +2,6 @@ package crypto;
 
 //h ttps://stackoverflow.com/questions/23561104/how-to-encrypt-and-decrypt-string
 //-with-my-passphrase-in-java-pc-not-mobile-plat
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
@@ -20,7 +19,6 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.crypto.spec.PBEParameterSpec;
-
 
 public class CryptoUtil {
 
@@ -126,4 +124,5 @@ public class CryptoUtil {
         String plainAfter = cryptoUtil.decrypt(key, enc);
         System.out.println("Original text after decryption: " + plainAfter);
     }
+
 }

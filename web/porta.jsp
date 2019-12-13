@@ -4,6 +4,10 @@
     Author     : Bernat
 --%>
 
+<%@page import="java.io.InputStreamReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.net.URLConnection"%>
+<%@page import="java.net.URL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="acces.entradaUsuari" %>
 <!DOCTYPE html>
@@ -14,21 +18,27 @@
     </head>
     <body>
         <%
-            entradaUsuari ppu = new entradaUsuari();
+            //dades que l'usuari ha entrat al formulari
             String user = request.getParameter("usu");
             String passwd = request.getParameter("pas");
-            if ((user == null) || (passwd == null)) {
+            entradaUsuari eu = new entradaUsuari();
+            //password desencriptat de la BD
+            String ppp = eu.accesUsuari(user);
+            session.setAttribute("ppp", ppp);
+            //mirar si son buides
+            if ((user == null) || (passwd == null) || (ppp == null)) {
                 response.sendRedirect("acces/noacces.html");
-            } else if (ppu.accesUsuari(user, passwd) < 12) {
-                response.sendRedirect("acces/nonivell.html");
-            } else {
-                //variable a la sessio
+            } else if (passwd.contentEquals(ppp)) {
+                //posar variable a la sessio
                 session.setAttribute("acces", new Boolean(true));
                 session.setAttribute("user", user);
-                System.out.println(user + passwd);
+                //accedir-hi
                 response.sendRedirect("acces/acces.html");
+            } else {
+                response.sendRedirect("acces/noacces.html");
             }
         %>
-        <div><h1> PLANA PRIVADA </h1> </div>
+
+
     </body>
 </html>
