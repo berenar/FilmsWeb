@@ -80,18 +80,21 @@
                 <a href="<%= request.getContextPath()%>/about.jsp">About</a>
 
                 <%
-                    //si l'usuari esta dins la sessio
-                    if ((Boolean) session.getAttribute("acces") != null) {
-                        if ((Boolean) session.getAttribute("acces") == true) {%>
+                    boolean ac = false;
+                    if(session != null && session.getAttribute("acces") != null){
+                        ac = (Boolean) session.getAttribute("acces");
+                        //true si hi ha la sessio iniciada, false si no
+                    }
+                    
+                    if (!ac) {
+                %>
+                <a href="<%= request.getContextPath()%>/acces/login.jsp">Login</a>
+                <%
+                } else {%>
                 <a href="<%= request.getContextPath()%>/usuari.jsp"><%= session.getAttribute("user")%></a>
                 <a href="<%= request.getContextPath()%>/acces/tanca.jsp">Tanca sessió</a>
-                <% }
-                    }
-                %>
+                <% }%>
             </div>
-
-
-
         </div>
     </body>
 </html>

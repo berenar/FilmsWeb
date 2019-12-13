@@ -13,6 +13,7 @@
     </head>
     <body>
         <% 
+            //session.invalidate();
             session.setAttribute("acces", false);
             response.sendRedirect(request.getContextPath()+"/index.jsp");
             %>

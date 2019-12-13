@@ -24,7 +24,6 @@
             entradaUsuari eu = new entradaUsuari();
             //password desencriptat de la BD
             String ppp = eu.accesUsuari(user);
-            session.setAttribute("ppp", ppp);
             //mirar si son buides
             if ((user == null) || (passwd == null) || (ppp == null)) {
                 response.sendRedirect("acces/noacces.html");

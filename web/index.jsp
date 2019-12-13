@@ -34,22 +34,6 @@
                 Ejemplo de gràfico en canvas de JavaScript </a>
             <br>
         </H1>
-
-        <% if (((Boolean) session.getAttribute("acces") == null)
-                    || ((Boolean) session.getAttribute("acces") == false)) { %>
-        <form action="porta.jsp" method="post">
-            Usuari:<br>
-            <input type="text" name="usu" value="">
-            <br>
-            Contrasenya:<br>
-            <input type="text" name="pas" value="">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
-        <%}%>
-        
-        
-
         <div id="espera"></div>
         <div id="container" style="min-width: 310px; height: 400px; max-width: 
              600px; margin: 0 auto">

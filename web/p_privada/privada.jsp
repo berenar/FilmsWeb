@@ -4,6 +4,7 @@
     Author     : Bernat
 --%>
 
+<%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-<%
+        <%
             String lloc = request.getServletContext().getContextPath();
             int num = lloc.length() - lloc.replaceAll("/", "").length();
             lloc = "";
@@ -24,7 +25,13 @@
         <jsp:include page="<%= lloc%>"/>   
         <h1>Part privada</h1>
 
-        <%= session.getAttribute("acces")%>
+        <%
+        //imprimir totes les variables de la sessio
+        Enumeration keys = session.getAttributeNames();
+            while (keys.hasMoreElements()) {
+                String key = (String) keys.nextElement();
+                out.println(key + ": " + session.getValue(key) + "<br>");
+            }%>
 
     </body>
 </html>
