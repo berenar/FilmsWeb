@@ -9,13 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Portal de películas</title>
-
+        <title>FilsWeb públic</title>
+        <link rel="shortcut icon" href="favicon.ico"/>
         <script src="p_publica/jquery-3.3.1.min.js" type="text/javascript"></script>
         <script src="p_publica/highcharts.js"></script>
         <script src="p_publica/exporting.js"></script>
         <script src="p_publica/export-data.js"></script>
         <script src="p_publica/primera.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     </head>
     <body>
         <%
@@ -34,9 +35,25 @@
                 Ejemplo de gràfico en canvas de JavaScript </a>
             <br>
         </H1>
-        <div id="espera"></div>
-        <div id="container" style="min-width: 310px; height: 400px; max-width: 
-             600px; margin: 0 auto">
+        <div class="row">
+            <div class="col-6">
+                <div id="espera"></div>
+                <div id="container" style="min-width: 310px; height: 400px; max-width: 
+                     600px; margin: 0 auto">
+                </div>
+            </div>
+            <div class="col-6">
+                <h1>grafic de barres</h1>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-4">
+                <h1>seleccionador de paisos</h1>
+            </div>
+            <div class="col-8">
+                <h1>mapa mundi</h1>
+            </div>
+        </div>
+
     </body>
 </html>

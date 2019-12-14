@@ -29,12 +29,12 @@
             .header a {
                 float: left;
                 color: black;
-                text-align: center;
+                text-align: left;
                 padding: 12px;
                 text-decoration: none;
                 font-size: 18px; 
                 line-height: 25px;
-                border-radius: 4px;
+                border-radius: 6px;
             }
 
             .header a.logo {
@@ -72,27 +72,27 @@
     <body>
         <div class="header">
             <a href="<%= request.getContextPath()%>" class="logo">
-                <img alt="Company Logo" src="<%= request.getContextPath()%>/imatges/logo.jpeg" width="100%" height="30%">
+                <img alt="Company Logo" src="<%= request.getContextPath()%>/imatges/logo.jpeg" width="50%" height="100%">
             </a>
             <div class="header-right">
-                                <a class="active" href="<%= request.getContextPath()%>">Home</a>
+                <a href="<%= request.getContextPath()%>">Home</a>
                 <a href="<%= request.getContextPath()%>/contact.jsp">Contact</a>
                 <a href="<%= request.getContextPath()%>/about.jsp">About</a>
 
                 <%
                     boolean ac = false;
-                    if(session != null && session.getAttribute("acces") != null){
+                    if (session != null && session.getAttribute("acces") != null) {
                         ac = (Boolean) session.getAttribute("acces");
                         //true si hi ha la sessio iniciada, false si no
                     }
-                    
+
                     if (!ac) {
                 %>
-                <a href="<%= request.getContextPath()%>/acces/login.jsp">Login</a>
+                <a class="active" href="<%= request.getContextPath()%>/acces/login.jsp">Login</a>
                 <%
                 } else {%>
                 <a href="<%= request.getContextPath()%>/usuari.jsp"><%= session.getAttribute("user")%></a>
-                <a href="<%= request.getContextPath()%>/acces/tanca.jsp">Tanca sessió</a>
+                <a class="active" href="<%= request.getContextPath()%>/acces/tanca.jsp">Tanca sessió</a>
                 <% }%>
             </div>
         </div>

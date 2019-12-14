@@ -23,8 +23,8 @@ function llegirGrafica(ses_item, url, indx) {
     result = sessionStorage.getItem(ses_item);
     if (result == null) {
         $.ajax({url: url,
-            success: function (result) {
-                sessionStorage.setItem(ses_item, result);
+            success: function (result) { 
+               sessionStorage.setItem(ses_item, result);
                 p[indx] = parseInt(result.substring(result.indexOf(":") + 1, result.indexOf("}")));
                 acum++;
                 pintarGrafica();
