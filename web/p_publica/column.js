@@ -6,7 +6,7 @@ var column_p = [];
 var column_base_url = "http://localhost:8080/PeliculesWeb/bdpeliculas?op=cantidadporedad&par=";
 var column_rangs = [];
 
-function calcula() {
+function  column_calcula() {
     column_acum = 0;
 
     column_rangs[0] = document.getElementById("edat1").value;
@@ -17,23 +17,23 @@ function calcula() {
     console.log("edat2: " + column_rangs[1]);
     console.log("edat3: " + column_rangs[2]);
 
-    pintarEspera();
+    column_pintarEspera();
 
     console.log(column_base_url + column_rangs[0]);
     console.log(column_base_url + column_rangs[1]);
     console.log(column_base_url + column_rangs[2]);
 
-    llegirGrafica("p1_02", column_base_url + column_rangs[0], 0);
-    llegirGrafica("p2_02", column_base_url + column_rangs[1], 1);
-    llegirGrafica("p3_02", column_base_url + column_rangs[2], 2);
+    column_llegirGrafica(column_base_url + column_rangs[0], 0);
+    column_llegirGrafica(column_base_url + column_rangs[1], 1);
+    column_llegirGrafica(column_base_url + column_rangs[2], 2);
 }
 
-function pintarEspera() {
+function  column_pintarEspera() {
     $('#column').empty(); //borrar grafic anterior si existeix
     $('#espera_column').append('<img src="p_publica/espera.gif" height="300" />');
 }
 
-function llegirGrafica(ses_item, url, indx) {
+function  column_llegirGrafica(url, indx) {
     //no emmagatzemam a la sessio pq la probabilitat es massa baixa 
     //i la cridada es rapida
     $.ajax({url: url,
@@ -41,20 +41,20 @@ function llegirGrafica(ses_item, url, indx) {
             column_p[indx] = parseInt(result.substring(result.indexOf(":") + 1, result.indexOf("}")));
             console.log(column_p[indx]);
             column_acum++;
-            pintarGrafica();
+            column_pintarGrafica();
         }});
 }
 
-function pintarGrafica() {
+function  column_pintarGrafica() {
     //esperar a que acabin totes les funcions
     //tantes funcions com rangs d'edat
     if (column_acum == column_rangs.length) {
         $('#espera_column').empty();
-        column();
+        column_column();
     }
 }
 
-function column() {
+function  column_column() {
     Highcharts.chart('column', {
         chart: {
             plotBackgroundColor: null,

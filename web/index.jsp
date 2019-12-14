@@ -16,7 +16,7 @@
         <script src="highcharts/exporting.js"></script>
         <script src="highcharts/export-data.js"></script>
         <script src="p_publica/pie.js" type="text/javascript"></script>
-        <!--<script src="p_publica/column.js" type="text/javascript"></script>-->
+        <script src="p_publica/column.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     </head>
     <body>
@@ -37,21 +37,23 @@
                     <br>
                 </H1>-->
         <div class="row">
-            <div class="col-6">
+            <div class="col-5">
                 <div id="espera_pie"></div>
                 <div id="pie" style="min-width: 310px; height: 400px; max-width: 
                      600px; margin: 0 auto">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-2">
                 <div>
                     <h3>Comparar el nombre de pelis de 3 edats</h3>
-                    <input id="edat1" type="text" name="foo" /><br>
-                    <input id="edat2" type="text" name="foo" /><br>
-                    <input id="edat3" type="text" name="foo" /><br>
-                    <button onclick="calcula()">Obtenir gràfic</button>
+                    <input id="edat1" type="text" name="foo" value="25" size="2"/><br>
+                    <input id="edat2" type="text" name="foo" value="45" size="2"/><br>
+                    <input id="edat3" type="text" name="foo" value="65" size="2"/><br>
+                    <br><button onclick="column_calcula()">Obtenir gràfic</button>
                 </div>
-                <div id="espera_column"></div>
+            </div>
+            <div class="col-5">
+                                <div id="espera_column"></div>
                 <div id="column" style="min-width: 310px; height: 400px; max-width: 
                      600px; margin: 0 auto">
                 </div>
