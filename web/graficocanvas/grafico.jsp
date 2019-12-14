@@ -15,15 +15,15 @@
     </head>
     <body onload="dibujar()">
         <%
-            String lloc = request.getServletContext().getContextPath();
-            int num = lloc.length() - lloc.replaceAll("/", "").length();
-            lloc = "";
-            for (int i = 0; i < num - 1; i++) {
-                lloc = lloc + "/..";
-            }
-            lloc = lloc + "/capcalera.jsp";
+//            String lloc = request.getServletContext().getContextPath();
+//            int num = lloc.length() - lloc.replaceAll("/", "").length();
+//            lloc = "";
+//            for (int i = 0; i < num - 1; i++) {
+//                lloc = lloc + "/..";
+//            }
+//            lloc = lloc + "/capcalera.jsp";
         %>
-        <jsp:include page="<%= lloc%>"/>   
+        <%--<jsp:include page="<%= lloc%>"/>--%>   
 
         <canvas id="puntosporidioma" style="margin-left:10%" width="870" height="522"></canvas>  
     </body>

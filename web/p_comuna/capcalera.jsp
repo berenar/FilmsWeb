@@ -75,7 +75,7 @@
                 <img alt="Company Logo" src="<%= request.getContextPath()%>/imatges/logo.jpeg" width="100%" height="30%">
             </a>
             <div class="header-right">
-                <a class="active" href="<%= request.getContextPath()%>">Home</a>
+                                <a class="active" href="<%= request.getContextPath()%>">Home</a>
                 <a href="<%= request.getContextPath()%>/contact.jsp">Contact</a>
                 <a href="<%= request.getContextPath()%>/about.jsp">About</a>
 
