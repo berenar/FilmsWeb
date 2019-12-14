@@ -10,15 +10,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>FilsWeb públic</title>
-        <link rel="shortcut icon" href="favicon.ico"/>
-        <script src="highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="highcharts/highcharts.js"></script>
-        <script src="highcharts/exporting.js"></script>
-        <script src="highcharts/export-data.js"></script>
-        <script src="p_publica/pie.js" type="text/javascript"></script>
-        <script src="p_publica/column.js" type="text/javascript"></script>
+        <link rel="shortcut icon" href="<%= request.getContextPath()%>/favicon.ico"/>
+        <script src="<%= request.getContextPath()%>/highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="<%= request.getContextPath()%>/highcharts/highcharts.js"></script>
+        <script src="<%= request.getContextPath()%>/highcharts/exporting.js"></script>
+        <script src="<%= request.getContextPath()%>/highcharts/export-data.js"></script>
+        <script src="<%= request.getContextPath()%>/p_publica/pie.js" type="text/javascript"></script>
+        <script src="<%= request.getContextPath()%>/p_publica/column.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="p_comuna/general.css">
+        <link rel="stylesheet" href="<%= request.getContextPath()%>/p_comuna/general.css">
     </head>
     <body>
         <%
@@ -28,7 +28,7 @@
             for (int i = 0; i < num - 1; i++) {
                 lloc = lloc + "/..";
             }
-            lloc = lloc + "p_comuna/capcalera.jsp";
+            lloc = lloc + "/p_comuna/capcalera.jsp";
         %>
         <jsp:include page="<%= lloc%>"/>
         <div class="row justify-content-md-center" >
@@ -71,6 +71,7 @@
                 </div>
             </div>
             <div class="col-5">
+                <h4>Pelis per edat</h4>
                 <div id="espera_column"></div>
                 <div id="column" style="min-width: 310px; height: 400px; max-width: 
                      600px; margin: 0 auto">

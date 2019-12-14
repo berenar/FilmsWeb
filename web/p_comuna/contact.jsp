@@ -10,6 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Portal de películas</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<%= request.getContextPath()%>/p_comuna/general.css">
     </head>
     <body>
         <%
@@ -19,14 +21,18 @@
             for (int i = 0; i < num - 1; i++) {
                 lloc = lloc + "/..";
             }
-            lloc = lloc + "/capcalera.jsp";
+            lloc = lloc + "capcalera.jsp";
         %>
         <jsp:include page="<%= lloc%>"/>   
 
-        <pre>
-        <a href="mailto:mascport@uib.es">Contactar por mail</a> <br>
-        Contactar por telefono 555555555 <br>
-        Contactar por tweeter #uibfilms
-        </pre>
+        <br>
+        <div class="row justify-content-md-center" >
+            <div class="col-4" align="center">
+                <h1>Contacte</h1>
+                <a href="mailto:bernatpericasserra97@gmail.com">Mail</a>
+                <br>
+                Telèfon 123456789
+            </div>
+        </div>
     </body>
 </html>

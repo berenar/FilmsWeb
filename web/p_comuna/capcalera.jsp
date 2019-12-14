@@ -12,7 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="general.css">
+        <link rel="stylesheet" href="<%= request.getContextPath()%>/p_comuna/general.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
     </head>
     <body>
         <div class="header">
@@ -21,9 +23,9 @@
                      width="40%" >
             </a>
             <div class="header-right">
-                <a href="<%= request.getContextPath()%>">Home</a>
-                <a href="<%= request.getContextPath()%>/contact.jsp">Contact</a>
-                <a href="<%= request.getContextPath()%>/about.jsp">About</a>
+                <a href="<%= request.getContextPath()%>">Principal</a>
+                <a href="<%= request.getContextPath()%>/p_comuna/contact.jsp">Contacte</a>
+                <a href="<%= request.getContextPath()%>/p_comuna/about.jsp">Informació</a>
 
                 <%
                     boolean ac = false;

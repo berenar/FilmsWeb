@@ -60,10 +60,11 @@ function  column_column() {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: true,
+            borderRadius: 10,
             type: 'column'
         },
         title: {
-            text: 'Pelis per edat'
+            text: ''
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

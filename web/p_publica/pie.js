@@ -4,7 +4,7 @@ var pie_acum;
 var pie_p = [];
 
 var pie_base_url = "http://localhost:8080/PeliculesWeb/bdpeliculas?op=cantidadporfranja&par=";
-var pie_rangs = ["0-30", "31-50", "51-70" ,"71-150"];
+var pie_rangs = ["0-30", "31-50", "51-70", "71-150"];
 
 $(document).ready(function () {
     pie_acum = 0;
@@ -23,8 +23,8 @@ function pie_llegirGrafica(ses_item, url, indx) {
     result = sessionStorage.getItem(ses_item);
     if (result === null) {
         $.ajax({url: url,
-            success: function (result) { 
-               sessionStorage.setItem(ses_item, result);
+            success: function (result) {
+                sessionStorage.setItem(ses_item, result);
                 pie_p[indx] = parseInt(result.substring(result.indexOf(":") + 1, result.indexOf("}")));
                 pie_acum++;
                 pie_pintarGrafica();
@@ -51,10 +51,11 @@ function pie_pie() {
             plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
+            borderRadius: 10,
             type: 'pie'
         },
         title: {
-            text: 'Edats dels actors per conjunts'
+            text: ''
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
