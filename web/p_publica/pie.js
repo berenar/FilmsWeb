@@ -1,37 +1,37 @@
-var acum;
+var pie_acum;
 
 //resultats de cada formatget
-var p = [];
+var pie_p = [];
 
-var base_url = "http://localhost:8080/PeliculesWeb/bdpeliculas?op=cantidadporfranja&par=";
-var edats = ["0-30", "31-50", "51-70" ,"71-150"];
+var pie_base_url = "http://localhost:8080/PeliculesWeb/bdpeliculas?op=cantidadporfranja&par=";
+var pie_rangs = ["0-30", "31-50", "51-70" ,"71-150"];
 
 $(document).ready(function () {
-    acum = 0;
+    pie_acum = 0;
     pintarEspera();
-    llegirGrafica("p1_01", base_url + edats[0], 0);
-    llegirGrafica("p2_01", base_url + edats[1], 1);
-    llegirGrafica("p3_01", base_url + edats[2], 2);
-    llegirGrafica("p4_01", base_url + edats[3], 3);
+    llegirGrafica("p1_01", pie_base_url + pie_rangs[0], 0);
+    llegirGrafica("p2_01", pie_base_url + pie_rangs[1], 1);
+    llegirGrafica("p3_01", pie_base_url + pie_rangs[2], 2);
+    llegirGrafica("p4_01", pie_base_url + pie_rangs[3], 3);
 });
 
 function pintarEspera() {
-    $('#espera').append('<img src="p_publica/espera.gif"/>');
+    $('#espera_pie').append('<img src="p_publica/espera.gif" height="300" />');
 }
 
 function llegirGrafica(ses_item, url, indx) {
     result = sessionStorage.getItem(ses_item);
-    if (result == null) {
+    if (result === null) {
         $.ajax({url: url,
             success: function (result) { 
                sessionStorage.setItem(ses_item, result);
-                p[indx] = parseInt(result.substring(result.indexOf(":") + 1, result.indexOf("}")));
-                acum++;
+                pie_p[indx] = parseInt(result.substring(result.indexOf(":") + 1, result.indexOf("}")));
+                pie_acum++;
                 pintarGrafica();
             }});
     } else {
-        p[indx] = parseInt(result.substring(result.indexOf(":") + 1, result.indexOf("}")));
-        acum++;
+        pie_p[indx] = parseInt(result.substring(result.indexOf(":") + 1, result.indexOf("}")));
+        pie_acum++;
         pintarGrafica();
     }
 }
@@ -39,14 +39,14 @@ function llegirGrafica(ses_item, url, indx) {
 function pintarGrafica() {
     //esperar a que acabin totes les funcions
     //tantes funcions com rangs d'edat
-    if (acum == edats.length) {
-        $('#espera').empty();
+    if (pie_acum === pie_rangs.length) {
+        $('#espera_pie').empty();
         pie();
     }
 }
 
 function pie() {
-    Highcharts.chart('container', {
+    Highcharts.chart('pie', {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -74,18 +74,18 @@ function pie() {
                 colorByPoint: true,
                 data: [{
                         name: 'Menors de 30',
-                        y: p[0],
+                        y: pie_p[0],
                         sliced: true,
                         selected: true
                     }, {
                         name: 'Entre 30 i 50',
-                        y: p[1]
+                        y: pie_p[1]
                     }, {
                         name: 'Entre 50 i 70',
-                        y: p[2]
+                        y: pie_p[2]
                     }, {
                         name: 'Majors de 70',
-                        y: p[3]
+                        y: pie_p[3]
                     }]
             }]
     });
