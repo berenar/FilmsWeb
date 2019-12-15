@@ -26,15 +26,15 @@
             String ppp = eu.accesUsuari(user);
             //mirar si son buides
             if ((user == null) || (passwd == null) || (ppp == null)) {
-                response.sendRedirect("acces/noacces.html");
+                response.sendRedirect("noacces.html");
             } else if (passwd.contentEquals(ppp)) {
                 //posar variable a la sessio
                 session.setAttribute("acces", new Boolean(true));
                 session.setAttribute("user", user);
                 //accedir-hi
-                response.sendRedirect("acces/acces.html");
+                response.sendRedirect("acces.html");
             } else {
-                response.sendRedirect("acces/noacces.html");
+                response.sendRedirect("noacces.html");
             }
         %>
 

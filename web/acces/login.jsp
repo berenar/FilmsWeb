@@ -18,7 +18,7 @@
         <br><br><br><br>
         <div class="row justify-content-md-center" >
             <div class="col-4" align="center">
-                <form action="../porta.jsp" method="post">
+                <form action="porta.jsp" method="post">
                     <h4>Login per accedir a la part privada
                     </h4>
                     Usuari:<br>

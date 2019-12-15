@@ -12,26 +12,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>FilsWeb públic</title>
         <link rel="shortcut icon" href="<%= request.getContextPath()%>/imatges/favicon.ico"/>
-        <!--jquery-->
-        <script src="<%= request.getContextPath()%>/highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
-
-        <!--mapes-->
+        
+        <script src="prova/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="prova/mapas/proj4.js"></script>
         <script src="prova/mapas/highmaps.js"></script>
         <script src="prova/exporting.js"></script>
         <script src="prova/mapas/offline-exporting.js"></script>
         <script src="prova/mapas/es-all.js"></script>
-        <script src="prova/mapas/proj4.js"></script>
         <script src="prova/mapas/map.js"></script>
+        
+        <!--jquery-->
+        <script src="<%= request.getContextPath()%>/highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
 
         <!--grafics-->
+        <script src="<%= request.getContextPath()%>/highcharts/highcharts.js"></script>
+        <script src="<%= request.getContextPath()%>/highcharts/exporting.js"></script>
+        <script src="<%= request.getContextPath()%>/highcharts/export-data.js"></script>
         <script src="<%= request.getContextPath()%>/p_publica/pie.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/p_publica/column.js" type="text/javascript"></script>
+        <!--mapes-->
+        <script src="prova/mapas/proj4.js"></script>
+        <script src="prova/mapas/offline-exporting.js"></script>
+        <script src="prova/mapas/es-all.js"></script>
+        <script src="prova/mapas/map.js"></script>
 
         <!--estils-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="<%= request.getContextPath()%>/p_comuna/general.css">
     </head>
-    <body>
+<body>
         <%
             String lloc = request.getServletContext().getContextPath();
             int num = lloc.length() - lloc.replaceAll("/", "").length();
@@ -56,11 +65,14 @@
             <div class="col-5">
                 <h4>Edats dels actors per conjunts d'edat</h4>
                 <div id="espera_pie"></div>
-                <div id="pie">
+                <div id="pie" style="min-width: 310px; height: 400px; max-width: 
+                     600px; margin: 0 auto">
                 </div>
             </div>
             <div class="col-2">
+
                 <div>
+
                     <h4>Comparar el nombre de pelis de 3 edats diferents</h4>
                     <div style="text-align: center">
                         <br>
@@ -81,7 +93,8 @@
             <div class="col-5">
                 <h4>Pelis per edat</h4>
                 <div id="espera_column"></div>
-                <div id="column">
+                <div id="column" style="min-width: 310px; height: 400px; max-width: 
+                     600px; margin: 0 auto">
                 </div>
             </div>
         </div>
@@ -91,13 +104,11 @@
             </div>
             <div class="col-8">
                 <h4>Mapa interactiu</h4>
-                <div id="espera_map"></div>
-                <div id="map">
-                </div>
+                <div id="map"></div>
             </div>
         </div>
     </div>
-
+    
 </body>
 </html>
 

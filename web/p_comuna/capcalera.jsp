@@ -4,6 +4,7 @@
     Author     : dsst
 --%>
 
+<%@page import="java.util.Enumeration"%>
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -44,5 +45,12 @@
                 <% }%>
             </div>
         </div>
+        <%
+            Enumeration keys = session.getAttributeNames();
+            while (keys.hasMoreElements()) {
+                String key = (String) keys.nextElement();
+                out.println(key + ": " + session.getValue(key) + "<br>");
+            }
+        %>
     </body>
 </html>
