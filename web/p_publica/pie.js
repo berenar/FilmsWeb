@@ -34,6 +34,7 @@ function pie_llegirGrafica(ses_item, url, indx) {
         pie_acum++;
         pie_pintarGrafica();
     }
+    
 }
 
 function pie_pintarGrafica() {

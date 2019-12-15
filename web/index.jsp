@@ -12,16 +12,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>FilsWeb públic</title>
         <link rel="shortcut icon" href="<%= request.getContextPath()%>/imatges/favicon.ico"/>
+
         <!--jquery-->
         <script src="<%= request.getContextPath()%>/highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
 
         <!--mapes-->
-        <script src="prova/mapas/highmaps.js"></script>
-        <script src="prova/exporting.js"></script>
-        <script src="prova/mapas/offline-exporting.js"></script>
-        <script src="prova/mapas/es-all.js"></script>
-        <script src="prova/mapas/proj4.js"></script>
-        <script src="prova/mapas/map.js"></script>
+        <script src="<%= request.getContextPath()%>/highmaps/highmaps.js"></script>
+        <script src="<%= request.getContextPath()%>/highmaps/exporting.js"></script>
+        <script src="<%= request.getContextPath()%>/highmaps/offline-exporting.js"></script>
+        <script src="<%= request.getContextPath()%>/highmaps/es-all.js"></script>
+        <script src="<%= request.getContextPath()%>/highmaps/proj4.js"></script>
+        <script src="<%= request.getContextPath()%>/highmaps/map.js"></script>
 
         <!--grafics-->
         <script src="<%= request.getContextPath()%>/p_publica/pie.js" type="text/javascript"></script>
@@ -88,6 +89,49 @@
         <div class="row">
             <div class="col-4">
                 <h4>Seleccionador de països</h4>
+                <br>
+                <div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="check1">
+                            <input type="checkbox" class="form-check-input" id="check0" checked>Barcelona
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="check2">
+                            <input type="checkbox" class="form-check-input" id="check1" checked>Madrid
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="check2">
+                            <input type="checkbox" class="form-check-input" id="check2" checked >Huesca
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="check2">
+                            <input type="checkbox" class="form-check-input" id="check3" checked>Villanubla
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="check2">
+                            <input type="checkbox" class="form-check-input" id="check4" checked>Marratxí
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="check2">
+                            <input type="checkbox" class="form-check-input" id="check5" checked>Algaida
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="check2">
+                            <input type="checkbox" class="form-check-input" id="check6" checked >Badajoz
+                        </label>
+                    </div>
+                    <br>
+                    <button class="button" 
+                            onclick="map_crea()"> Actualitza mapa
+                    </button>
+                    <br><br><img src="imatges/right.png" width="50px">
+                </div>
             </div>
             <div class="col-8">
                 <h4>Mapa interactiu</h4>

@@ -1,39 +1,53 @@
-var lat = [0.0, 0.0, 0.0];
-var lon = [0.0, 0.0, 0.0];
-var noms = ["", "", ""];
-var acum = 0;
-var numpob;
+var map_lat = [0.0, 0.0, 0.0];
+var map_lon = [0.0, 0.0, 0.0];
+var map_noms = ["", "", ""];
+var map_acum = 0;
+var map_numpob;
+var map_llocs = ["Barcelona", "Madrid", "Huesca", "Villanubla", "Marratxi",
+    "Algaida", "Badajoz"];
 
 $(document).ready(function () {
-    n = 0;
-    llegirInfo("Estellencs", n++);
-    llegirInfo("Fuenteovejuna", n++);
-    llegirInfo("Valdemoro", n++);
-    llegirInfo("Tordesillas", n++);
-    numpob = n;
+    map_crea();
 });
 
-function llegirInfo(lloc, ind) {
+function map_crea() {
+    n = 0;
+    map_pintarEspera();
+    for (var i = 0; i < map_llocs.length; i++) {
+        if ($('#check' + i).prop('checked')) {
+            map_llegirInfo(map_llocs[i], n++);
+        }
+    }
+    map_numpob = n;
+}
+
+function map_pintarEspera() {
+    $('#espera_map').append('<img src="p_publica/espera.gif"/>');
+}
+
+
+function map_llegirInfo(lloc, ind) {
     tempo = "http://localhost:8080/PeliculesWeb/bdpeliculas?op=gpspoblacion&par=" + lloc;
     $.ajax({url: tempo,
         success: function (result) {
-            lat[ind] = parseFloat(result.substring(result.indexOf("lat':") + 5, result.indexOf("},{")));
-            lon[ind] = parseFloat(result.substring(result.indexOf("lon':") + 5, result.indexOf("}]}")));
-            noms[ind] = lloc;
-            acum++;
-            pintarGrafica();
+            map_lat[ind] = parseFloat(result.substring(result.indexOf("lat':") + 5, result.indexOf("},{")));
+            map_lon[ind] = parseFloat(result.substring(result.indexOf("lon':") + 5, result.indexOf("}]}")));
+            map_noms[ind] = lloc;
+            map_acum++;
+            map_pintarGrafica();
         }});
 }
 
-function pintarGrafica() {
-    if (acum == numpob) {
+function map_pintarGrafica() {
+    $('#espera_map').empty();
+    if (map_acum == map_numpob) {
         variables = "[";
-        for (i = 0; i < acum; i++) {
-            variables = variables + "{\"name\": \"" + noms[i] + "\", \"lat\": " + lat[i] + ", \"lon\": " + lon[i] + "},";
+        for (i = 0; i < map_acum; i++) {
+            variables = variables + "{\"name\": \"" + map_noms[i] + "\", \"lat\": " + map_lat[i] + ", \"lon\": " + map_lon[i] + "},";
         }
         variables = variables.substring(0, variables.length - 1) + "]";
-        acum = 0;
-        Highcharts.mapChart('spain', {
+        map_acum = 0;
+        Highcharts.mapChart('map', {
             chart: {
                 map: 'countries/es/es-all'
             },

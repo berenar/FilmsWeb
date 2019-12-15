@@ -23,7 +23,7 @@ public class DBActionsPoblaciones {
             Statement st1, st2;
             st1 = con.getConection().createStatement();
             st2 = con.getConection().createStatement();
-            String sqlq = "select * from poblaciones where poblacion like '" + par + "';";
+            String sqlq = "select * from poblaciones where poblacion like '" + par + "' AND pais='es';";
             ResultSet rs = st1.executeQuery(sqlq);
             String aux;
             float lat, lon;
