@@ -45,12 +45,5 @@
                 <% }%>
             </div>
         </div>
-        <%
-            Enumeration keys = session.getAttributeNames();
-            while (keys.hasMoreElements()) {
-                String key = (String) keys.nextElement();
-                out.println(key + ": " + session.getValue(key) + "<br>");
-            }
-        %>
     </body>
 </html>

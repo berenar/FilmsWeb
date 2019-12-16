@@ -4,6 +4,7 @@
     Author     : dsst
 --%>
 
+<%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -56,6 +57,13 @@
             lloc = lloc + "/p_comuna/capcalera.jsp";
         %>
         <jsp:include page="<%= lloc%>"/>
+        <%
+            Enumeration keys = session.getAttributeNames();
+            while (keys.hasMoreElements()) {
+                String key = (String) keys.nextElement();
+                out.println(key + ": " + session.getValue(key) + "<br>");
+            }
+        %>
         <div class="row justify-content-md-center" >
             <div class="col-3" align="center">
                 <h1> Part privada</h1>
@@ -64,33 +72,23 @@
         <div class="row justify-content-md-center">
             <div class="col-5" style="background: url('../imatges/clouds.jpg')">
                 <h4>Núvol de persones</h4>
-                <p id="param"></p>
-                <br/>
+
                 <div id="myCanvasContainer">
                     <canvas id="myCanvas"></canvas>
                 </div>
                 <div id="tags">
                     <ul>
-                        <li><a href="index.jsp?persona=Fernández">fernandez ESPECIAL</a></li>
-                        <li><a href="http://www.google.com" target="_blank">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="http://www.uib.es">Hola</a></li>
-                        <li><a href="index.jsp?persona=Fernández">fernandez ESPECIAL</a></li>
+                        <li><a href="#Kirk Douglas">Kirk Douglas</a></li>
+                        <li><a href="#Anthony Edwards">Anthony Edwards</a></li>
+                        <li><a href="#Melanie Griffith">Melanie Griffith</a></li>
+                        <li><a href="#Anthoney Cameron Eden">Anthoney Cameron Eden</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-5">
                 <h4>Fitxa</h4>
+                <p id="param"></p>
+
             </div>
         </div>
         <div class="row justify-content-md-center">
