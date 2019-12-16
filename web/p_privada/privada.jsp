@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="<%= request.getContextPath()%>/p_comuna/general.css">
         <script src="<%= request.getContextPath()%>/nuvol/jquery.tagcanvas.min.js" type="text/javascript"></script>
+        <script src="<%= request.getContextPath()%>/p_privada/nuvol.js" type="text/javascript"></script>
+
         <script type="text/javascript">
             function getParPerNom(name) {
                 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -94,8 +96,9 @@
         <div class="row justify-content-md-center">
             <div class="col-8 ">
                 <h4>Nombre de pelis de les persones consultades</h4>
+                <div id="espera_pie"></div>
+                <div id="pie"></div>
             </div>
-        </div>
 
 
     </body>
