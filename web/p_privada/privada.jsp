@@ -10,13 +10,38 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>FilsWeb privat</title>
-        <link rel="shortcut icon" href="<%= request.getContextPath()%>/favicon.ico"/>
+        <link rel="shortcut icon" href="<%= request.getContextPath()%>/imatges/favicon.ico"/>
         <script src="<%= request.getContextPath()%>/highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/highcharts/highcharts.js"></script>
         <script src="<%= request.getContextPath()%>/highcharts/exporting.js"></script>
         <script src="<%= request.getContextPath()%>/highcharts/export-data.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="<%= request.getContextPath()%>/p_comuna/general.css">
+        <script src="<%= request.getContextPath()%>/nuvol/jquery.tagcanvas.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            function getParPerNom(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                if (!$('#myCanvas').tagcanvas({
+                    textColour: 'black',
+                    outlineThickness: 2,
+                    outlineColour: '#000000',
+                    maxSpeed: 0.10,
+                    depth: 0.5
+                }, 'tags')) {
+                    $('#myCanvasContainer').hide();
+                }
+            });
+            $(document).ready(function () {
+                $("#param").html(getParPerNom("persona"))
+            });
+        </script>
     </head>
     <body>
         <%
@@ -35,8 +60,32 @@
             </div>
         </div>
         <div class="row justify-content-md-center">
-            <div class="col-5">
+            <div class="col-5" style="background: url('../imatges/clouds.jpg')">
                 <h4>Núvol de persones</h4>
+                <p id="param"></p>
+                <br/>
+                <div id="myCanvasContainer">
+                    <canvas id="myCanvas"></canvas>
+                </div>
+                <div id="tags">
+                    <ul>
+                        <li><a href="index.jsp?persona=Fernández">fernandez ESPECIAL</a></li>
+                        <li><a href="http://www.google.com" target="_blank">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="http://www.uib.es">Hola</a></li>
+                        <li><a href="index.jsp?persona=Fernández">fernandez ESPECIAL</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="col-5">
                 <h4>Fitxa</h4>
@@ -47,6 +96,7 @@
                 <h4>Nombre de pelis de les persones consultades</h4>
             </div>
         </div>
+
 
     </body>
 </html>

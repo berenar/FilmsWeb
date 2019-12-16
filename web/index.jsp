@@ -48,11 +48,6 @@
                 <h1> Part pública</h1>
             </div>
         </div>
-        <!--        <H1>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="graficocanvas/grafico.jsp">
-                        Ejemplo de gràfico en canvas de JavaScript </a>
-                    <br>
-                </H1>-->
         <div class="row justify-content-md-center">
             <div class="col-5">
                 <h4>Edats dels actors per conjunts d'edat</h4>
