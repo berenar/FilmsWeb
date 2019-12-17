@@ -11,10 +11,21 @@ $(window).on('hashchange', function (e) {
     actor = window.location.hash;
     actor = actor.substring(1, actor.length);
     console.log(actor);
-    //afegim només l'actor pq no sabem el nombre de pelis encara
-    nuvol_actors.push(actor);
-    nuvol_llegirGrafica(actor, nuvol_base_url + actor);
+    if (!jaAfegit()) {
+        //afegim només l'actor pq no sabem el nombre de pelis encara
+        nuvol_actors.push(actor);
+        nuvol_llegirGrafica(actor, nuvol_base_url + actor);
+    }
 });
+
+function jaAfegit() {
+    for (var i = 0; i < nuvol_actors.length; i++) {
+        if (actor === nuvol_actors[i]) {
+            return true;
+        }
+    }
+    return false;
+}
 
 function nuvol_llegirGrafica(actor, url) {
     result = sessionStorage.getItem(actor);
@@ -40,7 +51,7 @@ function nuvol_pie() {
         variables = variables + "{\"name\": \"" + nuvol_actors[i] + "\", \"y\": " + nuvol_pelis[i] + "},";
     }
     variables = variables.substring(0, variables.length - 1) + "]";
-    variables=variables.replace('%20',' ');
+    variables = variables.replace('%20', ' ');
 
     Highcharts.chart('pie', {
         chart: {
