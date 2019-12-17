@@ -13,12 +13,27 @@ $(document).ready(function () {
 function map_crea() {
     n = 0;
     map_pintarEspera();
+    //mirar si algun checkbox esta activat
+    algunTrue = false;
     for (var i = 0; i < map_llocs.length; i++) {
         if ($('#check' + i).prop('checked')) {
-            map_llegirInfo(map_llocs[i], n++);
+            algunTrue = true;
         }
     }
-    map_numpob = n;
+    if (algunTrue) {
+        for (var i = 0; i < map_llocs.length; i++) {
+            if ($('#check' + i).prop('checked')) {
+                algunPintat = true;
+                map_llegirInfo(map_llocs[i], n++);
+            }
+        }
+        map_numpob = n;
+    } else {
+        //si no hi ha cap checkbox activat, pintar un mapa en blanc
+        map_pintarGraficaBuida();
+    }
+
+
 }
 
 function map_pintarEspera() {
@@ -52,7 +67,7 @@ function map_pintarGrafica() {
                 map: 'countries/es/es-all'
             },
             title: {
-                text: 'Highmaps basic lat/lon demo'
+                text: ''
             },
             mapNavigation: {
                 enabled: true
@@ -82,4 +97,36 @@ function map_pintarGrafica() {
                 }]
         });
     }
+}
+
+function map_pintarGraficaBuida() {
+    $('#espera_map').empty();
+    Highcharts.mapChart('map', {
+        chart: {
+            map: 'countries/es/es-all'
+        },
+        title: {
+            text: ''
+        },
+        mapNavigation: {
+            enabled: true
+        },
+        tooltip: {
+            headerFormat: '',
+            pointFormat: '<b>{point.name}</b><br>Lat: {point.lat}, Lon: {point.lon}'
+        },
+        series: [{
+                // Use the gb-all map with no data as a basemap
+                name: 'Basemap',
+                borderColor: '#A0A0A0',
+                nullColor: 'rgba(200, 200, 200, 0.3)',
+                showInLegend: false
+            }, {
+                name: 'Separators',
+                type: 'mapline',
+                nullColor: '#707070',
+                showInLegend: false,
+                enableMouseTracking: false
+            }]
+    });
 }

@@ -91,6 +91,9 @@ public class bdpeliculas extends HttpServlet {
         if (operacion.contentEquals("todosporedad")) {
             DBActionsNameBasics dbanb = new DBActionsNameBasics();
             res = dbanb.getTodosPorEdad(par);
+        } else if (operacion.contentEquals("unopornombre")) {
+            DBActionsNameBasics dbanb = new DBActionsNameBasics();
+            res = dbanb.getUnoPorNombre(par);
         } else if (operacion.contentEquals("cantidadporedad")) {
             DBActionsNameBasics dbanb = new DBActionsNameBasics();
             res = dbanb.getCantidadPorEdad(par);

@@ -58,7 +58,7 @@ function nuvol_pie() {
         })
     }
 
-    var jsonPie = JSON.stringify(obj);
+   var jsonPie = JSON.stringify(obj);
     console.log(jsonPie);
     $('#pie').highcharts(jsonPie);
 }
