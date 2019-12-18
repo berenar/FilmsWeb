@@ -37,6 +37,7 @@ function map_crea() {
 }
 
 function map_pintarEspera() {
+    $('#espera_map').empty();
     $('#espera_map').append('<img src="p_publica/espera.gif"/>');
 }
 

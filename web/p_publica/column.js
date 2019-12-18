@@ -13,15 +13,7 @@ function  column_calcula() {
     column_rangs[1] = document.getElementById("edat2").value;
     column_rangs[2] = document.getElementById("edat3").value;
 
-    console.log("edat1: " + column_rangs[0]);
-    console.log("edat2: " + column_rangs[1]);
-    console.log("edat3: " + column_rangs[2]);
-
     column_pintarEspera();
-
-    console.log(column_base_url + column_rangs[0]);
-    console.log(column_base_url + column_rangs[1]);
-    console.log(column_base_url + column_rangs[2]);
 
     column_llegirGrafica(column_base_url + column_rangs[0], 0);
     column_llegirGrafica(column_base_url + column_rangs[1], 1);
@@ -30,6 +22,7 @@ function  column_calcula() {
 
 function  column_pintarEspera() {
     $('#column').empty(); //borrar grafic anterior si existeix
+    $('#espera_column').empty();
     $('#espera_column').append('<img src="p_publica/espera.gif" height="300" />');
 }
 

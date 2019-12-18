@@ -21,7 +21,7 @@ public class DBActionsNameBasics {
         try {
             con.open();
             Statement st = con.getConection().createStatement();
-            ResultSet rs = st.executeQuery("select * from namebasics WHERE primaryname='" + par + "';");
+            ResultSet rs = st.executeQuery("select * from namebasics where primaryname like '" + par + "';");
             String aux;
             String nom;
             int nace;
@@ -30,14 +30,13 @@ public class DBActionsNameBasics {
                 nom = rs.getString("primaryname");
                 nace = rs.getInt("birthyear");
                 muere = rs.getInt("deathyear");
-                if (muere < 0) {   // por si no ha muerto
+                if (muere < 0) {
                     muere = Calendar.getInstance().get(Calendar.YEAR);
                 }
-                if ((muere - nace) == (Integer.parseInt(par))) {
-                    aux = "";
-                    aux = aux + "{'vals':['" + nom + "'," + nace + "," + muere + "]}";
-                    res = res + aux + ",";
-                }
+                aux = "";
+                aux = aux + "{'vals':['" + nom + "'," + nace + "," + muere + "]}";
+                res = res + aux + ",";
+
             }
             res = res.substring(0, res.length() - 1);   // quito la última coma
             res = res + "]}";
