@@ -50,6 +50,11 @@
                         <li><a href="#Anthony Edwards">Anthony Edwards</a></li>
                         <li><a href="#Melanie Griffith">Melanie Griffith</a></li>
                         <li><a href="#Anthoney Cameron Eden">Anthoney Cameron Eden</a></li>
+                        <li><a href="#Jerry Goldsmith">Jerry Goldsmith</a></li>
+                        <li><a href="#Joan Fontaine">Joan Fontaine</a></li>
+                        <li><a href="#Diane Lane">Diane Lane</a></li>
+                        <li><a href="#Gary Oldman">Gary Oldman</a></li>
+                        <li><a href="#Ryan Phillippe">Ryan Phillippe</a></li>
                     </ul>
                 </div>
             </div>
