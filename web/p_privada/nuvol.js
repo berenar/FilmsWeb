@@ -30,10 +30,10 @@ $(window).on('hashchange', function (e) {
     if (!jaAfegit()) {
         $('#pie').empty();
         $('#espera_pie').empty();
-        $('#espera_pie').append('<img src="espera.gif" height="300" />');
+        $('#espera_pie').append('<img src="../imatges/espera.gif" height="300" />');
         //$('#fitxa').empty();
         $('#espera_fitxa').empty();
-        $('#espera_fitxa').append('<img src="espera.gif" height="100" />');
+        $('#espera_fitxa').append('<img src="../imatges/espera.gif" height="100" />');
         //afegim només l'actor pq no sabem el nombre de pelis encara
         nuvol_actors.push(actor);
         nuvol_llegirGrafica(actor);

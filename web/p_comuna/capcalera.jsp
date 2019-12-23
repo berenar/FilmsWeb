@@ -40,7 +40,7 @@
                 <a class="active" href="<%= request.getContextPath()%>/acces/login.jsp">Login</a>
                 <%
                 } else {%>
-                <a href="<%= request.getContextPath()%>/usuari.jsp" style="color: teal"><%= session.getAttribute("user")%></a>
+                <a href="<%= request.getContextPath()%>/p_comuna/user_info.jsp" style="color: teal"><%= session.getAttribute("user")%></a>
                 <a class="active" href="<%= request.getContextPath()%>/acces/tanca.jsp">Tanca sessió</a>
                 <% }%>
             </div>

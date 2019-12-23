@@ -16,7 +16,7 @@ $(document).ready(function () {
 });
 
 function pie_pintarEspera() {
-    $('#espera_pie').append('<img src="p_publica/espera.gif" height="300" />');
+    $('#espera_pie').append('<img src="imatges/espera.gif" height="300" />');
 }
 
 function pie_llegirGrafica(ses_item, url, indx) {
@@ -34,7 +34,7 @@ function pie_llegirGrafica(ses_item, url, indx) {
         pie_acum++;
         pie_pintarGrafica();
     }
-    
+
 }
 
 function pie_pintarGrafica() {

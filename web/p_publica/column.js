@@ -23,7 +23,7 @@ function  column_calcula() {
 function  column_pintarEspera() {
     $('#column').empty(); //borrar grafic anterior si existeix
     $('#espera_column').empty();
-    $('#espera_column').append('<img src="p_publica/espera.gif" height="300" />');
+    $('#espera_column').append('<img src="imatges/espera.gif" height="300" />');
 }
 
 function  column_llegirGrafica(url, indx) {

@@ -11,7 +11,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>FilsWeb privat</title>
-        <link rel="shortcut icon" href="<%= request.getContextPath()%>/imatges/favicon.ico"/>
         <script src="<%= request.getContextPath()%>/highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
         <script src="<%= request.getContextPath()%>/highcharts/highcharts.js"></script>
         <script src="<%= request.getContextPath()%>/highcharts/exporting.js"></script>

@@ -11,8 +11,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>FilsWeb públic</title>
-        <link rel="shortcut icon" href="<%= request.getContextPath()%>/imatges/favicon.ico"/>
-
         <!--jquery-->
         <script src="<%= request.getContextPath()%>/highcharts/jquery-3.3.1.min.js" type="text/javascript"></script>
 
@@ -135,8 +133,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-</body>
+    </body>
 </html>
 
